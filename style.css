@@ -1,5 +1,41 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: greenyellow;
-  font-family: Arial;
+  font-family: "Press Start 2P", sans-serif;
   font-size: 20px;
+  padding: 75px;
+}
+h1 {
+  text-align: center;
+  padding: 20px;
+}
+p {
+  padding: 20px;
+}
+
+#intro {
+  text-align: center;
+}
+.form {
+  border: 5px solid black;
+  text-align: center;
+  padding: 10px;
+  margin: 20px;
+  width: 400px;
+}
+
+input,
+button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+#form h2 {
+  color: blue;
 }
