@@ -8,6 +8,7 @@ let direction = 1;
 let invadersId;
 let goingRight = true;
 let aliensRemoved = [];
+let results = 0;
 
 for (let i = 0; i < 225; i++) {
   const square = document.createElement("div");
@@ -122,6 +123,10 @@ function moveInvaders() {
       clearInterval(invadersId);
     }
   }
+  if(aliensRemoved.length === alienInvaders.length) {
+    resultsDisplay.innerHTML = 'YOU WIN'
+    clearInterval(invadersId)
+  }
 }
 invadersId = setInterval(moveInvaders, 500);
 
@@ -145,12 +150,16 @@ function shoot(e) {
       );
       clearInterval(laserId);
 
-      const alienRemoval = alienInvaders.indexOf(currentLaserIndex);
+      const alienRemoved = alienInvaders.indexOf(currentLaserIndex);
       aliensRemoved.push(alienRemoved);
+      results++
+      resultsDisplay.innerHTML = results
     }
+
+
   }
   switch (e.key) {
-    case "ArrowUp":
+    case "w":
       laserId = setInterval(moveLaser, 100);
   }
 }
